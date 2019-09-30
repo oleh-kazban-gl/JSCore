@@ -1,0 +1,25 @@
+Intro, Data Types
+Functions
+Deferred and Promise 
+Events and Event Handlers
+Ajax and HTTP protocols
+OOP (Prototype)
+ES6 features:
+	How to use it today (Babel)
+	Class & OOP (Sub-class via extends, Mixins)
+	Getters & Setters
+	Template Literals
+	Multiline Strings
+	Destructuring Assignment
+	Rest/Spread
+	Default parameters
+	Enhanced Objects
+	Arrow Functions
+	Let/Const
+	Map/Set data structures
+	Symbols
+	Generators
+	New Math, Number, String, Array, Object methods
+	Async/Await
+	Modules
+Code style, code conventions and clean code using static code analysis (JSHint/JSLint)
