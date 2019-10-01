@@ -20,6 +20,19 @@ ES6 features:
 	Symbols
 	Generators
 	New Math, Number, String, Array, Object methods
-	Async/Await
+	Promise/Async/Await
 	Modules
+
+---
+	Syntax Changes/Extensions
+	Modules & Classes
+	Symbols
+	Iterators & Generators
+	Promises
+	Object Extensions
+	Maps & Set
+	The Reflect API
+	The Proxy API
+---
+
 Code style, code conventions and clean code using static code analysis (JSHint/JSLint)
