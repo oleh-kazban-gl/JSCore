@@ -13,6 +13,9 @@ console.log('int1 inversion = ', -int1);
 console.log('int1 / 0 = ', int1 / 0);
 console.log('-int1 / 0 = ', -int1 / 0);
 console.log('"0" / 0 = ', '0' / 0);
+console.log('"10" / 0 = ', '10' / 0);
+console.log('0 / 0 = ', 0 / 0);
+console.log('"Hello" + true = ', "Hello" + true);
 
 // Strings
 var str1 = 'Hello';

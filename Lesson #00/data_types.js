@@ -47,10 +47,10 @@ var user = {
 	isRegestered: true,
 	agreementAccepted: false,
 	getFullName: function() {
-		return this.firstName + ' ' + this.lastName;
+		return this.person.firstName + ' ' + this.person.lastName;
 	},
 	setAge: function(age) {
-		this.age = age;
+		this.person.age = age;
 
 		return this.age;
 	}
