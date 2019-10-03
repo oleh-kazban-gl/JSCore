@@ -1,24 +1,38 @@
-var arr1 = [1,2,3,4,5,6,7,8,9,10];
-var arr2 = [-10,1,2,3,4,5,6,7,8,9,10];
+// Search
+Array.find()
+Array.findIndex()
+Array.includes()
+Array.every()
+Array.some()
+Array.filter()
+Array.indexOf()
+Array.lastIndexOf()
 
-arr1.forEach(function(elem, index) {
-	console.log(`element: ${elem}, index: ${index}`);
-});
+// Iterating
+Array.forEach()
 
-var even = arr1.filter(function(elem) {
-	return elem % 2 === 0;
-});
+// Mutation
+Array.push()
+Array.pop()
+Array.shift()
+Array.unshift()
+Array.map()
+Array.reduce()
+Array.reduceRight()
+Array.filter()
+Array.slice()
+Array.splice()
 
-var odd = arr1.filter(function(elem) {
-	return elem % 2 !== 0;
-});
+// Sorting
+Array.sort()
 
-// arr1.every()
+// Data manipulation
+Array.of()
+Array.fill()
+Array.reverse()
+Array.flat()
+Array.flatMap()
+Array.concat()
 
-// console.log('arr: ', arr1);
-console.log('even: ', even);
-console.log('odd: ', odd);
-
-console.log('positive: ', arr2.every(function(elem) { return elem >= 0; }));
-console.log('negative: ', arr2.some(function(elem) { return elem < 0; }));
-console.log(arr1.map(function(elem) { return elem * 10; }));
+// Data conversion
+Array.join()

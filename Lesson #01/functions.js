@@ -1,21 +1,69 @@
-
-console.log('1, 2 = ', add(1, 2));
-console.log('"Hello", "World" = ', add("Hello", "World"));
-console.log('true, false = ', add(true, false));
-
-
-// console.log('0, false = ', 0 + false);
-// console.log('0, true = ', 0 + true);
-
-function add(a, b) {
-	return a + b;
+// Function declaration
+function addDec(arg1, arg2) {
+	return arg1 + arg2;
 }
 
-var multiply = function (a, b) {
-	return a * b;
+// Function expression
+var addExp = function (arg1, arg2) {
+	return arg1 + arg2;
 };
 
-// console.log('10, 2', multiply(10, 2));
+// Self-defining function
+var selfDef = function () {
+	console.log('Initialization');
+	console.log('Phaze 1');
 
-// var arrow = (a, b) => a + b;
-// console.log(arrow(10, 20));
+	selfDef = function () {
+		console.log('Phaze 2');
+
+		selfDef = function () {
+			console.log('Phaze 3');
+		};
+	};
+};
+
+selfDef();
+selfDef();
+selfDef();
+
+// IIFE - Immediately Invoked Function Expression
+(function (n) {
+	var result = 1;
+
+	for (var i = 1; i <= n; i++) {
+		result *= i;
+	}
+
+	console.log("Factorial of " + n + " = " + result);
+}(4));
+
+// Functions-constructors
+function Vehicle(type, color) {
+	var status = 'stopped';
+	var self = this;
+	// var arrLogger = () => {
+	// 	console.log(`${this.type} status: ${status}`);
+	// };
+
+	this.type = type;
+	this.color = color;
+	this.startEngine = function () {
+		status = 'started';
+		logger();
+		arrLogger();
+	};
+	this.stopEngine = function () {
+		status = 'stopped';
+		logger();
+		arrLogger();
+	};
+
+	function logger() {
+		console.log(`${self.type} status: ${status}`);
+	}
+}
+
+var vehicle = new Vehicle('abstract vehicle', 'black');
+console.log('vehicle instance: ', vehicle);
+vehicle.startEngine();
+vehicle.stopEngine();
