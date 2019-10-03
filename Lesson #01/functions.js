@@ -49,18 +49,18 @@ function Vehicle(type, color) {
 	this.color = color;
 	this.startEngine = function () {
 		status = 'started';
-		logger();
+		// logger();
 		arrLogger();
 	};
 	this.stopEngine = function () {
 		status = 'stopped';
-		logger();
+		// logger();
 		arrLogger();
 	};
 
-	function logger() {
-		console.log(`${self.type} status: ${status}`);
-	}
+	// function logger() {
+	// 	console.log(`${self.type} status: ${status}`);
+	// }
 }
 
 var vehicle = new Vehicle('abstract vehicle', 'black');

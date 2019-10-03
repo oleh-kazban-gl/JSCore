@@ -47,6 +47,10 @@ console.log('Number(true) = ', Number(true));
 console.log('Number(false) = ', Number(false));
 console.log('+true = ', +true);
 console.log('+false = ', +false);
+console.log('false * 1 = ', false * 1);
+console.log('false / 1 = ', false / 1);
+console.log('true * 1 = ', true * 1);
+console.log('true / 1 = ', true / 1);
 
 // Strings -> Booleans
 console.log('\n\rStrings -> Booleans');
