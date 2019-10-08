@@ -18,6 +18,13 @@ console.log('properties: ', Object.keys(user));
 
 Object.preventExtensions(user);
 user.isAdmin = true;
+user.firstName = 'Dmytro';
+
+delete user.sex;
+
+// var user = Object.assign({}, user);
+// console.log('isExtensible: ', Object.isExtensible(user));
 
 console.log('isExtensible: ', Object.isExtensible(user));
 console.log('properties: ', Object.keys(user));
+console.log('user: ', user);

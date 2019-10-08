@@ -6,7 +6,7 @@ function getGlobalVariable(name) {
 }
 
 function concat() {
-	return global_a + ', ' +global_b;
+	return global_a + ', ' + global_b;
 }
 
 getGlobalVariable(global_a);

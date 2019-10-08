@@ -23,6 +23,8 @@ Object.freeze(user);
 user.isAdmin = false;
 user.isGlobalAdmin = false;
 
+delete(user.isAdmin);
+
 console.log('isAdmin: ', user.isAdmin);
 console.log('isGlobalAdmin: ', user.isGlobalAdmin);
 
