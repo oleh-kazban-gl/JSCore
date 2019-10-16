@@ -164,6 +164,12 @@ function addEventListeners() {
 	table[0].addEventListener('mouseover', ($event) => {
 		onMouseoverHandler($event, 'Table');
 	});
+	table[0].addEventListener('click', () => {
+		customEvent(table[0]);
+	});
+	table[0].addEventListener('custom', ($event) => {
+		onCustomEventHandler($event, table[0]);
+	});
 
 	// Containers
 	containers.forEach(container => {
@@ -218,5 +224,18 @@ function onKeypressHandler($event) {
 		$event.preventDefault();
 		console.error('Use only lower case symbols');
 	}
+}
+
+function customEvent(element) {
+	var _event = new CustomEvent('custom');
+
+	if (!!element) {
+		element.dispatchEvent(_event);
+	}
+}
+
+function onCustomEventHandler($event, element) {
+	console.info($event);
+	console.log(`onCustomEvent element: ${element}, event: ${$event}`);
 }
 
