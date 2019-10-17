@@ -1,20 +1,24 @@
 // Simple example of closure
-function getCounter() {
+function getCounter(counterName) {
 	var counter = 0;
+	var name = counterName;
 
 	return function() {
-		console.log('counter: ', counter);
+		console.log(`Counter: ${name}: ${counter}`);
 		counter++;
 	};
 }
 
-var counter = getCounter();
+// var counter = getCounter('counter#1');
+// var counter2 = getCounter('counter#2');
 
-counter();
-counter();
-counter();
-counter();
-counter();
+// counter();
+// counter();
+// counter();
+
+// counter2();
+// counter2();
+// counter2();
 
 // Example with simple API
 function getTimer() {
@@ -47,14 +51,14 @@ function getTimer() {
 	return timer;
 }
 
-var timer = getTimer();
+// var timer = getTimer();
 
-timer.start();
-timer.start();
-timer.stop();
-timer.stop();
+// timer.start();
+// timer.start();
+// timer.stop();
+// timer.stop();
 
-// IIFE
+// IIFE -> (function(arg) { ... })(123);
 (function(arg) {
 	var timer = getTimer();
 
