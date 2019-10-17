@@ -2,8 +2,6 @@
 
 window.onload = init;
 
-var window;
-var document;
 var buttons;
 var links;
 var input;
@@ -16,9 +14,6 @@ function init() {
 }
 
 function getElements() {
-	window = window;
-	document = document;
-
 	buttons = Array.from(document.getElementsByClassName('btn'));
 	links = Array.from(document.getElementsByClassName('link'));
 	input = Array.from(document.getElementsByClassName('input-text'));

@@ -31,6 +31,9 @@ function getUsers(since) {
 	}
 }
 
+// getUser('octocat');
+// getUsers(135);
+
 // https://api.github.com/users?since=135
 // https://api.github.com/users/octocat
 
@@ -60,22 +63,22 @@ function fetchUrl(url) {
 		xhr.open('GET', url); // GET | POST | PUT | DELETE
 
 		xhr.onreadystatechange = function (state) {
-			// console.log('onreadystatechange: ', state);
+			console.log('onreadystatechange: ', state);
 		};
 		xhr.onprogress = function (state) {
-			// console.log('onprogress: ', state);
+			console.log('onprogress: ', state);
 		};
 		xhr.onloadstart = function (state) {
-			// console.log('onloadstart: ', state);
+			console.log('onloadstart: ', state);
 		};
 		xhr.onload = function (state) {
-			// console.log('onload: ', state);
+			console.log('onload: ', state);
 		};
 		xhr.onloadend = function (state) {
-			// console.log('onloadend: ', state);
-			// console.log('response: ', xhr.response);
-			// console.log('response: ', xhr.responseText);
-			// console.log('response: ', xhr.responseType);
+			console.log('onloadend: ', state);
+			console.log('response: ', xhr.response);
+			console.log('response: ', xhr.responseText);
+			console.log('response: ', xhr.responseType);
 
 			var response = JSON.parse(xhr.response);
 
@@ -88,20 +91,20 @@ function fetchUrl(url) {
 			});
 		};
 		xhr.onerror = function (state) {
-			// console.log('onerror: ', state);
+			console.log('onerror: ', state);
 			reject({
 				status: xhr.status,
 				statusText: xhr.statusText
 			});
 		};
 		xhr.onabort = function (state) {
-			// console.log('onabort: ', state);
+			console.log('onabort: ', state);
 			reject({
 				statusText: 'Aborted'
 			});
 		};
 		xhr.ontimeout = function (state) {
-			// console.log('ontimeout: ', state);
+			console.log('ontimeout: ', state);
 			reject({
 				statusText: 'Timeout'
 			});
@@ -111,7 +114,7 @@ function fetchUrl(url) {
 }
 
 function getAndProcessUsers() {
-	fetchUrl('https://api.github.com/users/ksdgfksdh')
+	fetchUrl('https://api.github.com/users/octocat') //ksdgfksdh
 		.then((response) => {
 			console.log('response: ', response);
 			processUsers(response.response);

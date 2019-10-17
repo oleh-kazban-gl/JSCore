@@ -2,7 +2,7 @@
 
 var promise = new Promise((resolve, reject) => {
 	setTimeout(() => {
-		resolve('result');
+		reject('result');
 	}, 1000);
 });
 
