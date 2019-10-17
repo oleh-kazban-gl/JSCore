@@ -1,3 +1,5 @@
+'use strict';
+
 // --- Object configuration ---
 // Object.freeze()
 

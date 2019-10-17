@@ -1,3 +1,5 @@
+'use strict';
+
 // Search
 Array.find()
 Array.findIndex()

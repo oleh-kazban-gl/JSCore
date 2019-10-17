@@ -1,3 +1,5 @@
+'use strict';
+
 // Numbers -> Strings
 console.log('\n\rNumbers -> Strings');
 console.log('(123).toString() = ', (123).toString());

@@ -1,3 +1,5 @@
+'use strict';
+
 var global_a = 'global a';
 var global_b = 'global b';
 

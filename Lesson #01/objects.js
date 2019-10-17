@@ -1,3 +1,5 @@
+'use strict';
+
 // Object creation/mutation
 Object.create()
 Object.assign()

@@ -1,3 +1,6 @@
+
+'use strict';
+
 // String manipulation
 String.trimLeft()
 String.trimRight()

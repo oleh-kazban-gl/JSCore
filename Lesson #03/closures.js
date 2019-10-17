@@ -1,3 +1,5 @@
+'use strict';
+
 // Simple example of closure
 function getCounter(counterName) {
 	var counter = 0;

@@ -1,3 +1,5 @@
+'use strict';
+
 // Function declaration
 function addDec(arg1, arg2) {
 	return arg1 + arg2;
