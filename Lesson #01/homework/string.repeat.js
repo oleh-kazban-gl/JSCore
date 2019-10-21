@@ -1,3 +1,5 @@
+'use strict';
+
 String.prototype.repeat = function(times) {
 	var result = '';
 
