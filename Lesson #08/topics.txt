@@ -1,0 +1,3 @@
+Tasks for VSCode
+Rules for ESLint
+Webpack configuration

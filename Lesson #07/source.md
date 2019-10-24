@@ -33,6 +33,10 @@ module.exports = {
     }
 };
 ```
+13. ```npm install --save-dev clean-webpack-plugin```
+---
+Usefull:
+- Webpack output management https://webpack.js.org/guides/output-management/
 
 <!-- xxx. ```npm install --save-dev typescript ts-loader``` -->
 <!-- xxx. ```npm install --save-dev tslint``` -->
