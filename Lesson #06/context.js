@@ -44,31 +44,31 @@ function logger(msg) {
 	console.log('EXTERNAL LOGGER: ' + msg);
 }
 
-// var vehicle = new Vehicle('truck', 'black', '200', 'MAN', 'TGS 8x8');
+var vehicle = new Vehicle('truck', 'black', '200', 'MAN', 'TGS 8x8');
 
-// vehicle.startEngine();
+vehicle.startEngine();
 // vehicle.logger = logger;
 // vehicle.stopEngine();
-// vehicle.brake();
+vehicle.brake();
 
-// var _vehicle = {
-// 	type: 'truck',
-// 	color: 'black',
-// 	power: '200',
-// 	manufacturer: 'MAN',
-// 	model: 'TGS 8x8',
-// 	engineStatus: ENGINE_STATUS.stopped,
-// };
+var _vehicle = {
+	type: 'truck',
+	color: 'black',
+	power: '200',
+	manufacturer: 'MAN',
+	model: 'TGS 8x8',
+	engineStatus: ENGINE_STATUS.stopped,
+};
 
-// _vehicle.startEngine = function() {
-// 	this.engineStatus = ENGINE_STATUS.started;
-// 	console.log(
-// 		`ENGINE STATUS: ${this.manufacturer}: ${this.model} - ${this.engineStatus}`
-// 	);
-// };
-// _vehicle.stopEngine = function stopEngine() {
-// 	console.log('stop engine: ', this);
-// };
+_vehicle.startEngine = function() {
+	this.engineStatus = ENGINE_STATUS.started;
+	console.log(
+		`ENGINE STATUS: ${this.manufacturer}: ${this.model} - ${this.engineStatus}`
+	);
+};
+_vehicle.stopEngine = function stopEngine() {
+	console.log('stop engine: ', this);
+};
 
 // _vehicle.startEngine();
 // _vehicle.stopEngine();
@@ -107,6 +107,7 @@ var admin = {
 		console.log(
 			'USER: ' + this.name + ', Role: ' + this.role + ' LOGGED IN'
 		);
+		console.log('AUTHORITIES: ', this.authorities);
 
 		if (!!msg) {
 			console.info('MSG: ', msg);
@@ -122,13 +123,14 @@ var user = {
 	name: 'Leeloo',
 	age: 38,
 	role: 'REGULAR_USER',
+	authorities: ['CREATE', 'EDIT']
 };
 
-admin.signIn();
+// admin.signIn();
 // user.signIn();
-admin.signIn.call(user, 'USER LOGGED IN');
-admin.signIn.apply(user, ['USER LOGGED IN']);
-admin.signIn.bind(user, 'USER LOGGED IN')();
+// admin.signIn.call(user, 'USER LOGGED IN');
+// admin.signIn.apply(user, ['USER LOGGED IN']);
+// admin.signIn.bind(user, 'USER LOGGED IN')();
 
 ///////
 
@@ -152,9 +154,10 @@ function isFullAge(limit, element) {
 }
 
 var ages = arrayCalc(users, calculateAge);
+
 var full = arrayCalc(ages, isFullAge.bind(this, 21));
 var semi = arrayCalc(ages, isFullAge.bind(this, 18));
 
-console.log(ages);
-console.log('full: ', full);
-console.log('semi: ', semi);
+// console.log(ages);
+// console.log('full: ', full);
+// console.log('semi: ', semi);
