@@ -19,7 +19,7 @@ Requirements:
 6. ```npm install --save babel-polyfill```
 7. ```npm install -g eslint```
 8. ```npm install --save-dev eslint eslint-config-airbnb```
-9. ```./node_modules/.bin/eslint --init```
+9. ```.\node_modules\.bin\eslint --init```
 10. Create a webpack configuration file in a root folder - webpack.config.js
 11. Create a main entry file in the rrot of your project - main.js
 12. 
