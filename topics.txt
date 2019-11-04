@@ -23,7 +23,7 @@ ES6 features:
 	Enhanced Objects
 	Arrow Functions
 	Let/Const
-	Map/Set data structures
+	Map/Set/WeakMap/WeakSet data structures
 	Symbols
 	Iterators
 	Generators

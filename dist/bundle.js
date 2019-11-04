@@ -98,11 +98,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_entry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/entry */ "./src/entry.js");
 /* harmony import */ var _src_functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/functions */ "./src/functions.js");
 /* harmony import */ var _src_syntax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/syntax */ "./src/syntax.js");
+/* harmony import */ var _src_oop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/oop */ "./src/oop.js");
+/* harmony import */ var _src_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./src/mixins */ "./src/mixins.js");
  // import { testVar, testLet, testConst } from './src/variables';
 
 
+ // import { User, Person } from './src/classes';
 
-Object(_src_entry__WEBPACK_IMPORTED_MODULE_0__["app"])('JSCore'); // testVar();
+
+ // app('JSCore');
+// testVar();
 // testLet();
 // testConst();
 // console.log('add: ', add(1, 2));
@@ -184,6 +189,189 @@ const greetUser = user => {
 
 /***/ }),
 
+/***/ "./src/mixins.js":
+/*!***********************!*\
+  !*** ./src/mixins.js ***!
+  \***********************/
+/*! exports provided: userGreetUtils, userByeUtils, User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userGreetUtils", function() { return userGreetUtils; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userByeUtils", function() { return userByeUtils; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+const userGreetUtils = {
+  greet() {
+    console.log(`Hello, ${this.fullName}`);
+  },
+};
+const userByeUtils = {
+  goAway() {
+    console.log(`Bye, ${this.fullName}`);
+  },
+};
+
+class User {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  set fullName(fullName) {
+    const [firstName, lastName] = fullName.split(' ');
+
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+
+Object.assign(User.prototype, userGreetUtils);
+Object.assign(User.prototype, userByeUtils);
+
+const user = new User('Oleh', 'Kazban');
+
+console.log('user: ', user);
+console.log('user full name: ', user.fullName);
+
+user.greet();
+user.goAway();
+// user.fullName = 'Ludmila Kazban';
+// console.log('user full name: ', user.fullName);
+
+
+/***/ }),
+
+/***/ "./src/oop.js":
+/*!********************!*\
+  !*** ./src/oop.js ***!
+  \********************/
+/*! exports provided: ENGINE_STATUS, CART_STATUS, Engine, Vehicle, Truck */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ENGINE_STATUS", function() { return ENGINE_STATUS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CART_STATUS", function() { return CART_STATUS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Engine", function() { return Engine; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Vehicle", function() { return Vehicle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Truck", function() { return Truck; });
+/* eslint-disable max-classes-per-file */
+const ENGINE_STATUS = {
+  started: 'STARTED',
+  stopped: 'STOPPED',
+};
+const CART_STATUS = {
+  empty: 'EMPTY',
+  loaded: 'LOADED',
+  loading: 'LOADING',
+  unloaded: 'UNLOADED',
+  unloading: 'UNLOADING',
+};
+
+class Engine {
+  constructor() {
+    this.status = ENGINE_STATUS.stopped;
+  }
+
+  start() {
+    this.status = ENGINE_STATUS.started;
+  }
+
+  stop() {
+    this.status = ENGINE_STATUS.stopped;
+  }
+
+  getStatus() {
+    return `ENGINE: ${this.status}`;
+  }
+}
+
+// function Vehicle() {}
+// Vehicle.prototype.log = function(message) {}
+
+class Vehicle {
+  static beep() {
+    console.log('BEEP');
+  }
+
+  static actionLogger(message) {
+    console.log('MSG: ', message);
+  }
+
+  static showContext() {
+    console.log('context: ', this);
+  }
+
+  constructor(type) {
+    this.type = type;
+    this.engine = new Engine();
+  }
+
+  log(message) {
+    Vehicle.actionLogger(`${this.type}: ${message}`);
+  }
+
+  getEngineStatus() {
+    return this.engine.getStatus();
+  }
+
+  startEngine() {
+    this.engine.start();
+  }
+
+  stopEngine() {
+    this.engine.stop();
+  }
+}
+
+class Truck extends Vehicle {
+  constructor(power, manufacturer, model, color = 'black') {
+    super('truck');
+    super.log('has just been created');
+
+    this.power = power;
+    this.manufacturer = manufacturer;
+    this.model = model;
+    this.color = color;
+    this.cartStatus = CART_STATUS.empty;
+  }
+
+  log(message) {
+    console.log(`${this.type}: ${this.power} | ${this.manufacturer} | ${this.model} | ${this.color.toUpperCase()}: ${message}`);
+  }
+
+  loadCart() {
+    this.cartStatus = CART_STATUS.loading;
+  }
+
+  unloadCart() {
+    this.cartStatus = CART_STATUS.unloading;
+  }
+}
+
+// const vehicle1 = new Vehicle('abstract');
+const truck1 = new Truck(200, 'Man', 'E200');
+
+// console.log('vehicle1: ', vehicle1);
+// vehicle1.log('test');
+// Vehicle.showContext();
+// Vehicle.showContext.bind(truck1)();
+
+console.log('truck1: ', truck1);
+
+truck1.startEngine();
+console.log(truck1.getEngineStatus());
+truck1.stopEngine();
+console.log(truck1.getEngineStatus());
+
+
+/***/ }),
+
 /***/ "./src/syntax.js":
 /*!***********************!*\
   !*** ./src/syntax.js ***!
@@ -213,17 +401,17 @@ const destructionObject = ({ name, age, sex }) => {
 // console.log(shortFabrique('Oleh', 39, 'M'));
 // destructionArray(['abc', 39, ['READ', 'WRITE', 'DELETE']]);
 // destructionArray(['abc', 39]);
-destructionObject({
-  name: 'Oleh',
-  age: 39,
-  sex: 'M'
-});
-destructionObject({
-  firstName: 'Oleh',
-  lastName: 'Kazban',
-  age: 39,
-  sex: 'M'
-});
+// destructionObject({
+//   name: 'Oleh',
+//   age: 39,
+//   sex: 'M'
+// });
+// destructionObject({
+//   firstName: 'Oleh',
+//   lastName: 'Kazban',
+//   age: 39,
+//   sex: 'M'
+// });
 
 // Spread & rest
 const spreadOperator = (obj1, obj2) => {
