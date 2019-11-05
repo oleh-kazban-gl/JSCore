@@ -9,6 +9,7 @@ Closures
 Events and Event Handlers
 Ajax and HTTP protocols
 OOP (Prototype)
+RegExp
 ES6 features:
 	How to use it today (Babel)
 	Class & OOP (Sub-class via extends, Mixins)

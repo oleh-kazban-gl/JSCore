@@ -29,7 +29,7 @@ export function testConst() {
     const test = 'changed const';
   }
 
-  test = 'changed again const';
+  // test = 'changed again const';
 
   console.log('test: ', test);
 }

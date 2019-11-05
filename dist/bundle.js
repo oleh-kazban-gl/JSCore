@@ -96,19 +96,61 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_entry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/entry */ "./src/entry.js");
-/* harmony import */ var _src_functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/functions */ "./src/functions.js");
-/* harmony import */ var _src_syntax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/syntax */ "./src/syntax.js");
- // import { testVar, testLet, testConst } from './src/variables';
+/* harmony import */ var _src_variables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/variables */ "./src/variables.js");
+/* harmony import */ var _src_functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/functions */ "./src/functions.js");
+/* harmony import */ var _src_syntax__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/syntax */ "./src/syntax.js");
+/* harmony import */ var _src_classes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./src/classes */ "./src/classes.js");
 
 
 
-Object(_src_entry__WEBPACK_IMPORTED_MODULE_0__["app"])('JSCore'); // testVar();
+
+ // app('JSCore');
+// testVar();
 // testLet();
 // testConst();
 // console.log('add: ', add(1, 2));
 // console.log('multiply: ', multiply(1, 2));
 // console.log('arrowAdd: ', arrowAdd(1, 2));
 // console.log('arrowMultiply: ', arrowMultiply(1, 2));
+
+/***/ }),
+
+/***/ "./src/classes.js":
+/*!************************!*\
+  !*** ./src/classes.js ***!
+  \************************/
+/*! exports provided: User, Person */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Person", function() { return Person; });
+/* eslint-disable max-classes-per-file */
+class User {
+  constructor({name, age, sex}) {
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+  }
+}
+
+class Person extends User {
+  constructor(user, email, authorities) {
+    super(user);
+
+    this.email = email;
+    this.authorities = authorities;
+  }
+}
+
+const user = new User({ name: 'Oleh', age: 39, sex: 'M'});
+// const person = new Person('Oleh', 39, 'M', 'mail@bvox.com', []);
+const person = new Person(user, 'mail@bvox.com', []);
+
+console.log('user: ', user);
+console.log('person: ', person);
+
 
 /***/ }),
 
@@ -133,7 +175,7 @@ let app = (name) => {
 /*!**************************!*\
   !*** ./src/functions.js ***!
   \**************************/
-/*! exports provided: add, multiply, arrowAdd, arrowMultiply, fabrique */
+/*! exports provided: add, multiply, arrowAdd, arrowTen, arrowMultiply, fabrique */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -141,6 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "add", function() { return add; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiply", function() { return multiply; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrowAdd", function() { return arrowAdd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrowTen", function() { return arrowTen; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrowMultiply", function() { return arrowMultiply; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fabrique", function() { return fabrique; });
 function add(a, b) {
@@ -152,6 +195,7 @@ function multiply(a, b) {
 }
 
 const arrowAdd = (a, b) => a + b;
+const arrowTen = a => a + 10;
 const arrowMultiply = (a, b) => a * b;
 const fabrique = (userName, age, sex) => ({
   userName: userName,
@@ -199,6 +243,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "spreadOperator", function() { return spreadOperator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "restOperator", function() { return restOperator; });
 const shortFabrique = (userName, age, sex) => ({ userName, age, sex });
+// export function shortFabrique(userName, age, sex) {
+//   return {
+//     userName: userName,
+//     age: age,
+//     sex: sex
+//   };
+// }
 const destructionArray = ([first, second, rest]) => {
   console.log('first: ', first);
   console.log('second: ', second);
@@ -213,17 +264,18 @@ const destructionObject = ({ name, age, sex }) => {
 // console.log(shortFabrique('Oleh', 39, 'M'));
 // destructionArray(['abc', 39, ['READ', 'WRITE', 'DELETE']]);
 // destructionArray(['abc', 39]);
-destructionObject({
-  name: 'Oleh',
-  age: 39,
-  sex: 'M'
-});
-destructionObject({
-  firstName: 'Oleh',
-  lastName: 'Kazban',
-  age: 39,
-  sex: 'M'
-});
+// destructionObject({
+//   sex: 'M',
+//   age: 39,
+//   name: 'Oleh',
+// });
+// destructionObject({
+//   firstName: 'Oleh',
+//   lastName: 'Kazban',
+//   middleName: 'Yuri',
+//   age: 39,
+//   sex: 'M'
+// });
 
 // Spread & rest
 const spreadOperator = (obj1, obj2) => {
@@ -257,8 +309,16 @@ const system = {
   authorities: ['READ', 'WRITE', 'DELETE'],
   roles: ['USER', 'SYSTEM_USER'],
 };
-const systemUser = spreadOperator(user, system);
+// const systemUser = spreadOperator(user, system);
 const userCopy = { ...user };
+
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+const arr3 = [...arr1, ...arr2];
+
+const filtered = arr1.filter(val => val % 2 === 0);
+
+// console.log(arr3);
 
 // const checkRef = (obj1, obj2) => obj1 === obj2;
 
@@ -272,7 +332,7 @@ let counter = {
   count: function () {
     setTimeout(function() {
       console.log(this);
-    }, 1000);
+    }.bind(this), 1000);
   }
 };
 let counterArrow = {
@@ -286,6 +346,57 @@ let counterArrow = {
 
 // counter.count();
 // counterArrow.count();
+
+
+/***/ }),
+
+/***/ "./src/variables.js":
+/*!**************************!*\
+  !*** ./src/variables.js ***!
+  \**************************/
+/*! exports provided: testVar, testLet, testConst */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "testVar", function() { return testVar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "testLet", function() { return testLet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "testConst", function() { return testConst; });
+// var vs let & const
+
+function testVar() {
+  var test = 'test var';
+
+  if (test) {
+    var test = 'changed var';
+  }
+
+  console.log('test: ', test);
+}
+
+function testLet() {
+  let test = 'test let';
+
+  if (test) {
+    let test = 'changed let';
+  }
+
+  test = 'changed again let';
+
+  console.log('test: ', test);
+}
+
+function testConst() {
+  const test = 'test const';
+
+  if (test) {
+    const test = 'changed const';
+  }
+
+  // test = 'changed again const';
+
+  console.log('test: ', test);
+}
 
 
 /***/ })
