@@ -93,16 +93,17 @@ export class Truck extends Vehicle {
 }
 
 // const vehicle1 = new Vehicle('abstract');
-const truck1 = new Truck(200, 'Man', 'E200');
+// const truck1 = new Truck(200, 'Man', 'E200');
 
 // console.log('vehicle1: ', vehicle1);
 // vehicle1.log('test');
 // Vehicle.showContext();
 // Vehicle.showContext.bind(truck1)();
 
-console.log('truck1: ', truck1);
+// console.log('truck1: ', truck1);
+// truck1.log('child truck was created');
 
-truck1.startEngine();
-console.log(truck1.getEngineStatus());
-truck1.stopEngine();
-console.log(truck1.getEngineStatus());
+// truck1.startEngine();
+// console.log(truck1.getEngineStatus());
+// truck1.stopEngine();
+// console.log(truck1.getEngineStatus());

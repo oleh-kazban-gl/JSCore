@@ -1,6 +1,6 @@
-Class
-Inheritance
-Polymorphism
-Mixins
-Getters & Setters
 Object Extensions
+Map, WeakMap, Set, WeakSet
+Symbols
+Generators
+Iterators
+New Math, Number, String, Array, Object methods

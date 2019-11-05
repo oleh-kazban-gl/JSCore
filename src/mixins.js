@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 export const userGreetUtils = {
   greet() {
     console.log(`Hello, ${this.fullName}`);
@@ -27,15 +28,30 @@ export class User {
   }
 }
 
-Object.assign(User.prototype, userGreetUtils);
-Object.assign(User.prototype, userByeUtils);
+export class Person extends User {
+  constructor(user, adress, email) {
+    super(user.firstName, user.lastName);
+    this.adress = adress;
+    this.email = email;
+  }
+}
+
+Object.assign(Person.prototype, userGreetUtils);
+Object.assign(Person.prototype, userByeUtils);
 
 const user = new User('Oleh', 'Kazban');
+const person = new Person(user, 'user address', 'mail@box.com');
 
-console.log('user: ', user);
-console.log('user full name: ', user.fullName);
+console.log('person: ', person);
+console.log('person full name: ', person.fullName);
 
-user.greet();
-user.goAway();
 // user.fullName = 'Ludmila Kazban';
 // console.log('user full name: ', user.fullName);
+
+// user.greet();
+// user.goAway();
+// user.fullName = 'Ludmila Kazban';
+// console.log('user full name: ', user.fullName);
+
+person.greet();
+person.goAway();
