@@ -13,6 +13,7 @@ import { weakSet } from './src/data-structures/weak_set';
 import { symbolTest } from './src/data-types/symbols';
 
 import {} from './src/data-structures/iterators';
+import './src/data-structures/generators';
 
 // app('JSCore');
 
