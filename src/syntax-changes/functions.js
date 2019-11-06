@@ -7,6 +7,7 @@ export function multiply(a, b) {
 }
 
 export const arrowAdd = (a, b) => a + b;
+export const arrowTen = a => a + 10;
 export const arrowMultiply = (a, b) => a * b;
 export const fabrique = (userName, age, sex) => ({
   userName: userName,

@@ -1,4 +1,11 @@
 export const shortFabrique = (userName, age, sex) => ({ userName, age, sex });
+// export function shortFabrique(userName, age, sex) {
+//   return {
+//     userName: userName,
+//     age: age,
+//     sex: sex
+//   };
+// }
 export const destructionArray = ([first, second, rest]) => {
   console.log('first: ', first);
   console.log('second: ', second);
@@ -14,13 +21,14 @@ export const destructionObject = ({ name, age, sex }) => {
 // destructionArray(['abc', 39, ['READ', 'WRITE', 'DELETE']]);
 // destructionArray(['abc', 39]);
 // destructionObject({
-//   name: 'Oleh',
+//   sex: 'M',
 //   age: 39,
-//   sex: 'M'
+//   name: 'Oleh',
 // });
 // destructionObject({
 //   firstName: 'Oleh',
 //   lastName: 'Kazban',
+//   middleName: 'Yuri',
 //   age: 39,
 //   sex: 'M'
 // });
@@ -57,8 +65,16 @@ const system = {
   authorities: ['READ', 'WRITE', 'DELETE'],
   roles: ['USER', 'SYSTEM_USER'],
 };
-const systemUser = spreadOperator(user, system);
+// const systemUser = spreadOperator(user, system);
 const userCopy = { ...user };
+
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+const arr3 = [...arr1, ...arr2];
+
+const filtered = arr1.filter(val => val % 2 === 0);
+
+// console.log(arr3);
 
 // const checkRef = (obj1, obj2) => obj1 === obj2;
 
@@ -72,7 +88,7 @@ let counter = {
   count: function () {
     setTimeout(function() {
       console.log(this);
-    }, 1000);
+    }.bind(this), 1000);
   }
 };
 let counterArrow = {
