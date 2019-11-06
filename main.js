@@ -10,6 +10,8 @@ import { weakMap } from './src/data-structures/weak_map';
 import { set } from './src/data-structures/set';
 import { weakSet } from './src/data-structures/weak_set';
 
+import { symbolTest } from './src/data-types/symbols';
+
 // app('JSCore');
 
 // testVar();

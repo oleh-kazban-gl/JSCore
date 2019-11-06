@@ -8,7 +8,7 @@ set
   .add({ name: 'Veronica' });
 
 // Structure
-console.log('set: ', set);
+// console.log('set: ', set);
 
 // Get size
 // console.log('set size: ', set.size);
