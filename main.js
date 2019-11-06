@@ -12,6 +12,8 @@ import { weakSet } from './src/data-structures/weak_set';
 
 import { symbolTest } from './src/data-types/symbols';
 
+import {} from './src/data-structures/iterators';
+
 // app('JSCore');
 
 // testVar();
