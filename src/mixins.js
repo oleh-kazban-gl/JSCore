@@ -39,11 +39,11 @@ export class Person extends User {
 Object.assign(Person.prototype, userGreetUtils);
 Object.assign(Person.prototype, userByeUtils);
 
-const user = new User('Oleh', 'Kazban');
-const person = new Person(user, 'user address', 'mail@box.com');
+// const user = new User('Oleh', 'Kazban');
+// const person = new Person(user, 'user address', 'mail@box.com');
 
-console.log('person: ', person);
-console.log('person full name: ', person.fullName);
+// console.log('person: ', person);
+// console.log('person full name: ', person.fullName);
 
 // user.fullName = 'Ludmila Kazban';
 // console.log('user full name: ', user.fullName);
@@ -53,5 +53,5 @@ console.log('person full name: ', person.fullName);
 // user.fullName = 'Ludmila Kazban';
 // console.log('user full name: ', user.fullName);
 
-person.greet();
-person.goAway();
+// person.greet();
+// person.goAway();
