@@ -26,6 +26,7 @@ map.set(testRef, {});
 // Get value by key name
 // console.log('get key: primary: ', map.get('primary'));
 // console.log('get key: wrong name: ', map.get('primery'));
+// console.log('get key: testRef: ', map.get(testRef));
 
 // Entries
 // console.log('keys: ', map.keys());

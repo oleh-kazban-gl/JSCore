@@ -20,7 +20,7 @@ weakMap
 
 // Has value
 // console.log('weakMap has value', weakMap.has(users[0]));
-// weakMap.has('123');
+// console.log(weakMap.has('123'));
 
 // Get value
 // console.log('weakMap get value', weakMap.get(users[0]));

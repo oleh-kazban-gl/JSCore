@@ -18,7 +18,8 @@ set
 // console.log('set size: ', set.size);
 // set.add(user);
 // console.log('set size: ', set.size);
-// set.add(user);
+set.add(user);
+// console.log('set size: ', set.size);
 
 // Entries
 // console.log('set values: ', set.values());

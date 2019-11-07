@@ -21,6 +21,8 @@ export const iterableArray = [0, 1, 2, 3, 4];
 
 // const iterator = iterableArray[Symbol.iterator]();
 
+// console.log('iterator: ', iterator);
+
 // console.log(iterator.next());
 // console.log(iterator.next());
 // console.log(iterator.next());
@@ -32,12 +34,25 @@ export const iterableArray = [0, 1, 2, 3, 4];
 //   console.log('value: ', value);
 // }
 
-// const user = {
-//   firstName: 'Oleh',
-//   lastName: 'Kazban',
-//   roles: ['USER', 'SYSTEM_USER', 'ADMIN'],
-// };
+const user = {
+  firstName: 'Oleh',
+  lastName: 'Kazban',
+  roles: ['USER', 'SYSTEM_USER', 'ADMIN'],
+};
 
-// for (let value of user) {
-//   console.log('value: ', value);
-// }
+user[Symbol.iterator] = function () {
+  let index = 0;
+  let _that = this;
+  return {
+    next: function() {
+      return {
+        done: index >= _that.roles.length ? true : false,
+        value: _that.roles[index++]
+      }
+    }
+  }
+};
+
+for (let value of user) {
+  console.log('value: ', value);
+}
