@@ -12,4 +12,4 @@ const symbol2 = Symbol('symbol');
 // console.log('compare symbols: ', symbol1 === symbol2);
 
 // Hidden properties
-console.log('symbolTest: ', symbolTest.description);
+// console.log('symbolTest: ', symbolTest.description);
