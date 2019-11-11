@@ -15,6 +15,12 @@ import { symbolTest } from './src/data-types/symbols';
 import {} from './src/data-structures/iterators';
 import './src/data-structures/generators';
 
+import './src/extensions/object';
+import './src/extensions/math';
+import './src/extensions/string';
+import './src/extensions/number';
+import './src/extensions/array';
+
 // app('JSCore');
 
 // testVar();

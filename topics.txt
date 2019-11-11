@@ -34,3 +34,5 @@ ES6 features:
 	The Reflect API
 	The Proxy API
 Code style, code conventions and clean code using static code analysis (JSHint/JSLint)
+
+https://exploringjs.com/es6/ch_overviews.html

@@ -1,6 +1,10 @@
-Map, WeakMap, Set, WeakSet
-Symbols
 Generators
-Iterators
 New Math, Number, String, Array, Object methods
 Object Extensions
+
+Modules
+Async operations via Promises, async/await
+Reflect API
+Proxy API
+
+Code conventions/style

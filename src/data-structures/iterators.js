@@ -53,6 +53,6 @@ user[Symbol.iterator] = function () {
   }
 };
 
-for (let value of user) {
-  console.log('value: ', value);
-}
+// for (let value of user) {
+//   console.log('value: ', value);
+// }
