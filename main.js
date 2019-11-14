@@ -21,6 +21,9 @@ import './src/extensions/string';
 import './src/extensions/number';
 import './src/extensions/array';
 
+import './src/promise/promise';
+import './src/async/async';
+
 // app('JSCore');
 
 // testVar();
