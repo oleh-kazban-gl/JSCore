@@ -56,13 +56,15 @@
 //   })
 //   .catch((error) => console.error('error: ', error));
 
-// testPromise.then(value => {
-//   console.log('resolved with: ', value);
+// testPromise
+//   .then(value => {
+//     console.log('resolved with: ', value);
 
-//   return 'new value';
-// }).then(value => {
-//   console.log('chained with: ', value);
-// });
+//     return 'new value';
+//   })
+//   .then(value => {
+//     console.log('chained with: ', value);
+//   });
 
 // testPromise
 //   .then((value) => {
@@ -74,19 +76,20 @@
 //     console.log('error: ', error);
 //   });
 
-// console.log('after subscription');
 
-// testPromise.then(value => {
-//   console.log('resolved with: ', value);
+// testPromise
+//   .then(value => {
+//     console.log('resolved with: ', value);
 
-//   return new Promise(resolve => {
-//     setTimeout(() => {
-//       resolve('value for chain');
-//     }, 3000);
+//     return new Promise(resolve => {
+//       setTimeout(() => {
+//         resolve('value for chain');
+//       }, 3000);
+//     });
+//   })
+//   .then(value => {
+//     console.log('chained with: ', value);
 //   });
-// }).then(value => {
-//   console.log('chained with: ', value);
-// });
 
 // testPromise
 //   .then(
@@ -95,6 +98,8 @@
 //     },
 //     (error) => {
 //       console.log('finished with error: ', error);
+
+//       return 'ERROR';
 //     }
 //   )
 //   .then(
@@ -111,3 +116,5 @@
 //   .then(result => {
 //     console.log('finally resolved: ', result);
 //   });
+
+// console.log('after subscription');

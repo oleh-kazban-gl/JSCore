@@ -3,6 +3,7 @@ export const person = {
   firstName: 'Oleh',
   lastName: 'Kazban',
   get fullName() {
+    console.log('context: ', this);
     return `${this.firstName} ${this.lastName}`;
   },
 };
@@ -17,6 +18,10 @@ class Person {
     this.firstName = firstName;
     this.lastName = lastName;
   }
+
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
 
 class User {
@@ -29,6 +34,11 @@ class User {
 
 const personInstance = new Person('Oleh', 'Kazban');
 const userInstance = new User(personInstance, ['USER', 'SYSTEM_USER', 'ADMIN'], ['CREATE', 'EDIT', 'DELETE']);
+
+// Object.setPrototypeOf(userInstance, personInstance);
+
+// console.log('person: ', personInstance.getFullName());
+// console.log('user: ', userInstance.getFullName());
 
 // --- Object.assign() ---
 // Merge
