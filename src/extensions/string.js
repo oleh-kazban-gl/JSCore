@@ -11,4 +11,5 @@ export const str1 = 'Lorem ipsum sit dolor ameT';
 // console.log('includes: ', str1.includes('Lorem'));
 // console.log('includes: ', str1.includes('orem'));
 // console.log('includes: ', str1.includes('met'));
+// console.log('includes: ', str1.includes('meT'));
 // console.log('includes: ', str1.includes('ipsum'));

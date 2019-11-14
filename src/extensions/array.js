@@ -17,7 +17,7 @@ export const users = [
 // const result = [].concat(arr3);
 // const result = Array.from(arr3);
 // const result = arr3.copyWithin(2, 0);
-// const result = arr3.copyWithin(2, 0, 2);
+// const result = arr3.copyWithin(1, 0, 2);
 
 // const result = Array.from(arr3, value => value * 10);
 
@@ -37,3 +37,8 @@ export const users = [
 // const iterator = arr3.entries();
 // console.log('iterator: ', iterator.next());
 // console.log('iterator: ', iterator.next());
+
+// Includes
+// console.log(arr3.includes(10));
+// console.log(arr3.includes(20));
+// --- console.log(users.includes(user => user.age === 39));

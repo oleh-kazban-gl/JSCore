@@ -7,8 +7,10 @@ export const undefinite = undefined;
 export const nan = NaN;
 export const infinite = Infinity;
 
-export const positiveFloat = 10.123;
-export const negativeFloat = -10.123;
+// export const positiveFloat = 10.123;
+// export const negativeFloat = -10.123;
+export const positiveFloat = 10.65;
+export const negativeFloat = -10.65;
 
 // --- Math.sign() ---
 // console.log('negative Math.sign', Math.sign(negative));

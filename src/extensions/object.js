@@ -47,8 +47,7 @@ const userInstance = new User(personInstance, ['USER', 'SYSTEM_USER', 'ADMIN'], 
 // console.log('person === personCopy: ', person === personCopy);
 
 // Shallow Copy
-// let shallowCopy = Object.assign({}, person);
-// shallowCopy = Object.assign(shallowCopy, user);
+// const shallowCopy = Object.assign({}, person, user);
 
 // console.log('shallowCopy: ', shallowCopy);
 // console.log('shallowCopy deep ref: ', shallowCopy.roles === user.roles);
@@ -61,6 +60,9 @@ const userInstance = new User(personInstance, ['USER', 'SYSTEM_USER', 'ADMIN'], 
 
 // console.log('mergedInstance instance of Person: ', mergedInstance instanceof Person);
 // console.log('mergedInstance instance of User: ', mergedInstance instanceof User);
+
+// console.log('person: ', person);
+// console.log('user: ', user);
 
 // console.log(personInstance.__proto__ === Person.prototype);
 // console.log(userInstance.__proto__ === User.prototype);
