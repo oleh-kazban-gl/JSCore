@@ -149,20 +149,20 @@ export class Person {
 // console.log(50 in range);
 
 // [[Apply]]
-function delay(f, ms) {
-  return new Proxy(f, {
-    apply(target, thisArg, args) {
-      setTimeout(() => target.apply(thisArg, args), ms);
-    }
-  });
-}
+// function delay(f, ms) {
+//   return new Proxy(f, {
+//     apply(target, thisArg, args) {
+//       setTimeout(() => target.apply(thisArg, args), ms);
+//     }
+//   });
+// }
 
-function sayHello(user) {
-  console.log(`Hello, ${user}`);
-}
+// function sayHello(user) {
+//   console.log(`Hello, ${user}`);
+// }
 
-sayHello = delay(sayHello, 3000);
+// sayHello = delay(sayHello, 3000);
 
-console.log(sayHello.length);
+// console.log(sayHello.length);
 
-sayHello("Oleh");
+// sayHello("Oleh");
