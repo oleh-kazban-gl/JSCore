@@ -1,0 +1,3 @@
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+- https://learn.javascript.ru/proxy
+- https://ponyfoo.com/articles/es6-proxies-in-depth

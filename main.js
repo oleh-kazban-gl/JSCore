@@ -24,6 +24,8 @@ import './src/extensions/array';
 import './src/promise/promise';
 import './src/async/async';
 
+import './src/api/proxy/proxy';
+
 // app('JSCore');
 
 // testVar();
