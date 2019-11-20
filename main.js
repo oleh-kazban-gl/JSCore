@@ -25,6 +25,7 @@ import './src/promise/promise';
 import './src/async/async';
 
 import './src/api/proxy/proxy';
+import './src/api/reflect/reflect';
 
 // app('JSCore');
 

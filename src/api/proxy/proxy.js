@@ -1,9 +1,9 @@
-export class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-}
+// export class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
 
 // Without traps
 // const person = new Person('Oleh', 39);
